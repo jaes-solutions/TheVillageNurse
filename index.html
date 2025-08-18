@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>The Village Nurse | Home</title>
+    <!-- Primary Meta Tags -->
+    <meta
+      name="description"
+      content="The Village Nurse provides professional and compassionate care services, including companionship, wellness visits, escort & buddy support, overnight stay support, end-of-life companionship, and wheelchair-accessible transport."
+    />
+
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="home care services, elderly care, companionship, wellness visits, end of life care, escort service for elderly, overnight care, wheelchair transport, The Village Nurse"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://www.thevillagenurse.co.uk/services.html"
+    />
+    <meta
+      property="og:title"
+      content="Compassionate Home Care Services | The Village Nurse"
+    />
+    <meta
+      property="og:description"
+      content="Professional companionship, wellness visits, escort support, and dignified care tailored to your needs."
+    />
+    <meta
+      property="og:image"
+      content="https://www.thevillagenurse.co.ukservices-preview.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://www.thevillagenurse.co.uk/services.html"
+    />
+    <meta
+      name="twitter:title"
+      content="Compassionate Home Care Services | The Village Nurse"
+    />
+    <meta
+      name="twitter:description"
+      content="Professional companionship, wellness visits, escort support, and dignified care tailored to your needs."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.thevillagenurse.co.uk/services-preview.jpg"
+    />
+    <!-- Tailwind CDN (quick dev build) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://db.onlinewebfonts.com/c/e71d1c4ccde9bca057cd4d7be7a7ba40?family=Themysion"
+      rel="stylesheet"
+    />
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.aom/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      /* Minor fixes & helpers (keep if you use the project's design tokens) */
+      /* If you already have custom tokens like bg-background / text-foreground in your Tailwind config, they will apply. */
+      html.dark {
+        color-scheme: dark;
+      }
+
+      .bg-background {
+        background-color: #f8f4ef; /* your new light mode colour */
+      }
+      html.dark .bg-background {
+        background-color: #0f172a; /* your existing dark mode colour */
+      }
+
+      @font-face {
+        font-family: "Themysion";
+        src: url("assets/themysion.regular.ttf") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      .font-themysion {
+        font-family: "Themysion", cursive;
+      }
+      .blur-3xl {
+        filter: blur(48px);
+      }
+      /* tiny helper for the logo container image sizing */
+      .logo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-background text-foreground">
+    <!-- Chatbot Button -->
+    <button
+      id="chatbotBtn"
+      class="fixed bottom-5 right-5 w-14 h-14 bg-[#446068] text-white rounded-full shadow-lg flex items-center justify-center text-2xl z-50"
+    >
+      💬
+    </button>
+
+    <!-- Chatbot Window -->
+    <div
+      id="chatbotWindow"
+      class="fixed bottom-24 right-5 w-80 h-[420px] bg-white rounded-3xl shadow-xl flex flex-col hidden z-50"
+    >
+      <!-- Header -->
+      <div class="bg-[#446068] text-white font-bold px-4 py-3 rounded-t-3xl">
+        Chat with us
+      </div>
+
+      <!-- Messages -->
+      <div id="chatMessages" class="flex-1 p-3 overflow-y-auto text-sm"></div>
+
+      <!-- Input -->
+      <div class="flex border-t border-gray-300 overflow-hidden">
+        <input
+          id="userInput"
+          type="text"
+          placeholder="Type a message..."
+          class="flex-1 px-3 py-2 focus:outline-none rounded-l-3xl"
+        />
+        <button
+          id="sendBtn"
+          class="bg-[#446068] text-white px-4 py-2 rounded-br-3xl"
+        >
+          ➤
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const chatbotBtn = document.getElementById("chatbotBtn");
+      const chatbotWindow = document.getElementById("chatbotWindow");
+      const sendBtn = document.getElementById("sendBtn");
+      const userInput = document.getElementById("userInput");
+      const chatMessages = document.getElementById("chatMessages");
+
+      // Toggle chatbot window
+      chatbotBtn.addEventListener("click", () => {
+        chatbotWindow.classList.toggle("hidden");
+      });
+
+      // Send message
+      sendBtn.addEventListener("click", sendMessage);
+      userInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendMessage();
+      });
+
+      function sendMessage() {
+        const msg = userInput.value.trim();
+        if (!msg) return;
+
+        addMessage(msg, "bg-[#446068] text-white self-end");
+        userInput.value = "";
+
+        // Mock bot reply based on keywords
+        setTimeout(() => {
+          let botReply =
+            "Thanks for your message! We will get back to you shortly.";
+          const lowerMsg = msg.toLowerCase();
+          if (lowerMsg.includes("book")) {
+            botReply =
+              "You can book your appointment here: <a href='contact.html' class='text-blue-500 underline' target='_blank'>Booking Page</a>";
+          } else if (lowerMsg.includes("service")) {
+            botReply =
+              "You can view our services here:<a href='#testimonials' class='text-blue-500 underline'>Services</a>";
+          } else if (lowerMsg.includes("about")) {
+            botReply = "You can learn more about us here: about.html";
+          } else if (lowerMsg.includes("hi", "hello", "Hola")) {
+            botReply =
+              "Hi there! Welcome to The Village Nurse, What can I help you with?";
+          } else if (lowerMsg.includes("contact")) {
+            botReply = "You can reach out to us here: contact.html";
+          } else if (lowerMsg.includes("help")) {
+            botReply =
+              "Sure! Please tell me more about what you need help with.";
+          } else if (lowerMsg.includes("blog")) {
+            botReply =
+              "You can read our latest updates here: <a href='blog.html' class='text-blue-500 underline' target='_blank'>Blog Page</a>";
+          } else if (
+            lowerMsg.includes("testimonial") ||
+            lowerMsg.includes("review")
+          ) {
+            botReply =
+              "See what our patients say: <a href='#testimonials' class='text-blue-500 underline'>Patient Reviews</a>";
+          } else if (lowerMsg.includes("credential")) {
+            botReply =
+              "You can view our credentials here: <a href='about.html#credentials' class='text-blue-500 underline'>Credentials</a>";
+          } else if (lowerMsg.includes("call")) {
+            botReply =
+              "You can call us directly here: <a href='tel:07398543965' class='text-blue-500 underline'>07398543965</a>";
+          } else if (lowerMsg.includes("email")) {
+            botReply =
+              "You can email us here: <a href='mailto:info@thevillagenurse.co.uk' class='text-blue-500 underline'>info@thevillagenurse.co.uk</a>";
+          }
+          addMessage(botReply, "bg-gray-200 self-start");
+        }, 600);
+      }
+
+      function addMessage(text, classes) {
+        const msgEl = document.createElement("div");
+        msgEl.innerHTML = text;
+        msgEl.className = `px-3 py-2 rounded-lg my-1 max-w-[80%] ${classes}`;
+        chatMessages.appendChild(msgEl);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    </script>
+    <div class="min-h-screen bg-background">
+      <!-- Modern Header -->
+      <header
+        class="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50 rounded-full overflow-hidden"
+      >
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+              <div class="relative">
+                <div
+                  class="w-14 h-14 bg-white-800 rounded-2xl flex items-center justify-center bg-card"
+                >
+                  <img
+                    src="assets/logo.png"
+                    alt="The Village Nurse Logo"
+                    class="logo-img"
+                  />
+                </div>
+                <div
+                  class="absolute -top-1 -right-1 w-4 h-4 rounded-full border-2 border-background bg-primary-500/70"
+                ></div>
+              </div>
+
+              <div>
+                <h1 class="text-2xl font-bold text-foreground tracking-tight">
+                  The Village Nurse
+                </h1>
+                <p class="text-muted-foreground text-sm font-medium">
+                  Licensed Healthcare Professional
+                </p>
+              </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-8">
+              <!-- simple dark mode toggle -->
+              <button
+                id="darkToggle"
+                aria-label="Toggle dark mode"
+                class="p-2 rounded-md hover:bg-accent/5 transition"
+              >
+                🌙
+              </button>
+
+              <a
+                href="about.html"
+                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
+                >About</a
+              >
+              <a
+                href="services.html"
+                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
+                >Services</a
+              >
+              <a
+                href="blog.html"
+                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
+                >Blog</a
+              >
+
+              <a
+                href="contact.html"
+                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
+                >Contact</a
+              >
+            </nav>
+          </div>
+        </div>
+      </header>
+      <section
+        class="relative w-full h-screen text-center overflow-hidden -mt-[5.5rem]"
+      >
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute inset-0 w-full min-h-[110vh] object-cover pb-[10px]"
+        >
+          <source src="assets/back.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative flex flex-col items-center justify-center h-full">
+          <!-- Title -->
+          <svg viewBox="0 0 500 200" class="w-full h-auto -mt-56 -mb-36">
+            <defs>
+              <path id="curve" d="M 50 150 Q 250 50 450 150" />
+              <!-- #446068 Q is for quadratic curve: adjust numbers for more/less bend -->
+            </defs>
+            <text
+              font-family="Themysion"
+              font-size="50"
+              fill="bg-black"
+              text-anchor="middle"
+            >
+              <textPath href="#curve" startOffset="50%">
+                The Village Nurse
+              </textPath>
+            </text>
+          </svg>
+          <div
+            class="flex flex-col md:flex-row items-center justify-center gap-16"
+          >
+            <!-- Left Column -->
+            <div class="flex flex-col items-center max-w-xs">
+              <a
+                href="contact.html"
+                class="bg-gradient-to-r from-[#446068] to-[#446068cc] text-white px-8 py-3 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition"
+              >
+                BOOK NOW
+              </a>
+              <p class="mt-6 text-lg leading-relaxed font-medium text-gray-800">
+                Experience hospital-quality nursing care in the comfort of your
+                home.
+              </p>
+              <div class="mt-4 text-[#446068] text-2xl">~</div>
+            </div>
+            <!-- Center Illustration -->
+            <div class="flex justify-center -mb-44">
+              <img
+                src="assets/nurse.png"
+                alt="Nurse caring for patient"
+                class="w-96 md:w-[28rem]"
+              />
+            </div>
+            <!-- Right Column -->
+            <div class="flex flex-col items-center max-w-xs">
+              <a
+                href="#contact"
+                class="bg-gradient-to-r from-[#446068] to-[#446068cc] text-white px-8 py-3 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition"
+              >
+                CONTACT US
+              </a>
+              <p class="mt-6 text-lg leading-relaxed font-medium text-gray-800">
+                Personalised, professional, and compassionate healthcare when
+                you need it most.
+              </p>
+              <div class="mt-4 text-[#446068] text-2xl">~</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="px-6 lg:px-12">
+        <!-- Ultra-Modern Hero Section -->
+        <section class="relative py-24 lg:py-32 overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/10"
+          ></div>
+          <div
+            class="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"
+          ></div>
+          <div
+            class="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="relative container mx-auto px-4 text-center">
+            <div class="max-w-5xl mx-auto">
+              <!-- Badge (animated on scroll) -->
+              <div data-aos="fade-up" data-aos-duration="700">
+                <span
+                  class="mb-8 inline-block px-6 py-2 text-sm font-medium bg-primary/10 text-primary border border-primary/20 rounded-full"
+                >
+                  ✨ 15+ Years of Professional Experience
+                </span>
+              </div>
+
+              <!-- Headline -->
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="800"
+                class="text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-[0.9] tracking-tight"
+              >
+                Premium Healthcare
+                <br />
+                <span
+                  class="bg-gradient-to-r from-primary to-secondary/70 bg-clip-text"
+                  >At Your Doorstep</span
+                >
+              </h2>
+
+              <!-- Subtext -->
+              <p
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="200"
+                class="text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+              >
+                Experience hospital-quality nursing care in the comfort of your
+                home. Personalised, professional, and compassionate healthcare
+                when you need it most.
+              </p>
+
+              <!-- CTA buttons -->
+              <div
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="400"
+                class="flex flex-col sm:flex-row gap-6 justify-center items-center"
+              >
+                <button
+                  class="text-lg px-10 py-6 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 group bg-primary text-primary-foreground font-semibold"
+                >
+                  Schedule Free Consultation
+                  <span
+                    class="ml-2 inline-block transform group-hover:translate-x-1 transition-transform"
+                    >➡️</span
+                  >
+                </button>
+
+                <button
+                  class="text-lg px-10 py-6 rounded-2xl border-2 hover:bg-accent/5 hover:scale-105 hover:-translate-y-1 transition-transform duration-300 bg-transparent"
+                >
+                  View Services
+                </button>
+              </div>
+
+              <!-- Stats -->
+              <div
+                class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+              >
+                <div
+                  class="text-center"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="text-3xl font-bold text-primary mb-2">500+</div>
+                  <div class="text-muted-foreground font-medium">
+                    Patients Treated
+                  </div>
+                </div>
+
+                <div
+                  class="text-center"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div class="text-3xl font-bold text-primary mb-2">24/7</div>
+                  <div class="text-muted-foreground font-medium">
+                    Emergency Support
+                  </div>
+                </div>
+
+                <div
+                  class="text-center"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <div class="text-3xl font-bold text-primary mb-2">100%</div>
+                  <div class="text-muted-foreground font-medium">
+                    Licensed & Insured
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Modern About Section -->
+        <section id="about" class="py-24 lg:py-32">
+          <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+              <div class="order-2 lg:order-1" data-aos="fade-right">
+                <span
+                  class="mb-6 inline-block rounded-full px-4 py-2 text-primary border border-primary/30"
+                  >Meet The Founder</span
+                >
+
+                <h3
+                  class="text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight"
+                >
+                  Vikky Etokakpan, <span class="text-primary">RN</span>
+                </h3>
+
+                <p class="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  With over 15 years of nursing experience, I understand how
+                  much a little time, kindness, and presence can mean. My
+                  mission is simple: to bring care, comfort, and connection back
+                  into the heart of our local community.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center"
+                    >
+                      🏅
+                    </div>
+                    <div>
+                      <div class="font-semibold text-foreground">
+                        State Licensed RN
+                      </div>
+                      <div class="text-sm text-muted-foreground">
+                        Current & Verified
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center"
+                    >
+                      🛡️
+                    </div>
+                    <div>
+                      <div class="font-semibold text-foreground">
+                        CPR Certified
+                      </div>
+                      <div class="text-sm text-muted-foreground">
+                        Advanced Training
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center"
+                    >
+                      👥
+                    </div>
+                    <div>
+                      <div class="font-semibold text-foreground">
+                        500+ Patients
+                      </div>
+                      <div class="text-sm text-muted-foreground">
+                        Successfully Treated
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center"
+                    >
+                      ✅
+                    </div>
+                    <div>
+                      <div class="font-semibold text-foreground">
+                        Fully Insured
+                      </div>
+                      <div class="text-sm text-muted-foreground">& Bonded</div>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="rounded-2xl px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-primary text-primary-foreground font-semibold"
+                >
+                  View Credentials
+                </button>
+              </div>
+
+              <div class="order-1 lg:order-2 relative" data-aos="fade-left">
+                <div class="relative">
+                  <div
+                    class="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 backdrop-blur-sm border border-border/50"
+                  >
+                    <div
+                      class="h-full w-full bg-gradient-to-br from-primary/20 to-transparent rounded-2xl flex items-center justify-center"
+                    >
+                      <!-- stethoscope emoji as placeholder -->
+                      <div class="text-primary/60 text-[6rem]">🩺</div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="absolute -top-6 -right-6 w-24 h-24 bg-emerald-500 rounded-2xl flex items-center justify-center shadow-xl"
+                  >
+                    <div class="text-white text-2xl">❤️</div>
+                  </div>
+
+                  <div
+                    class="absolute -bottom-6 -left-6 w-20 h-20 bg-primary rounded-2xl flex items-center justify-center shadow-xl"
+                  >
+                    <div class="text-primary-foreground">⏰</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ultra-Modern Services Section -->
+        <section
+          id="services"
+          class="py-24 lg:py-32 bg-gradient-to-b from-secondary/10 to-background"
+        >
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+              <span
+                class="mb-6 inline-block rounded-full px-6 py-2 text-primary border border-primary/30"
+                >Our Services</span
+              >
+
+              <h3
+                class="text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
+              >
+                Comprehensive
+                <span class="text-primary">Care & Support</span> Solutions
+              </h3>
+
+              <p
+                class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              >
+                From friendly companionship to dignified end-of-life care, our
+                services are tailored to bring comfort, safety, and emotional
+                support to you or your loved one.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Service card 1 -->
+              <div
+                class="group transform transition-all duration-700 ease-in-out hover:-translate-y-2 hover:scale-[1.02] bg-card/50 border border-border/50 rounded-2xl p-6"
+                data-aos="zoom-in"
+                data-aos-delay="100"
+              >
+                <div
+                  class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                >
+                  🧡
+                </div>
+                <h4
+                  class="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2"
+                >
+                  Companionship & Emotional Support
+                </h4>
+                <p class="text-base leading-relaxed">
+                  Friendly visits, warm conversation, and social connection for
+                  those who need a caring presence.
+                </p>
+              </div>
+
+              <!-- Service card 2 -->
+              <div
+                class="group transform transition-all duration-700 ease-in-out hover:-translate-y-2 hover:scale-[1.02] bg-card/50 border border-border/50 rounded-2xl p-6"
+                data-aos="zoom-in"
+                data-aos-delay="200"
+              >
+                <div
+                  class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                >
+                  🤝
+                </div>
+                <h4
+                  class="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2"
+                >
+                  Sitting-In & Befriending
+                </h4>
+                <p class="text-base leading-relaxed">
+                  Short or long visits with light conversation, shared
+                  activities, or simply a reassuring presence.
+                </p>
+              </div>
+
+              <!-- Service card 3 -->
+              <div
+                class="group transform transition-all duration-700 ease-in-out hover:-translate-y-2 hover:scale-[1.02] bg-card/50 border border-border/50 rounded-2xl p-6"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+              >
+                <div
+                  class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                >
+                  💚
+                </div>
+                <h4
+                  class="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2"
+                >
+                  Wellness Visits
+                </h4>
+                <p class="text-base leading-relaxed">
+                  Regular check-ins to ensure safety, monitor wellbeing, and
+                  encourage healthy routines.
+                </p>
+              </div>
+
+              <!-- Service card 4 -->
+              <div
+                class="group transform transition-all duration-700 ease-in-out hover:-translate-y-2 hover:scale-[1.02] bg-card/50 border border-border/50 rounded-2xl p-6"
+                data-aos="zoom-in"
+                data-aos-delay="400"
+              >
+                <div
+                  class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                >
+                  🛍️
+                </div>
+                <h4
+                  class="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2"
+                >
+                  Escort & Buddy Support
+                </h4>
+                <p class="text-base leading-relaxed">
+                  Friendly assistance for hospital visits, errands, shopping,
+                  and leisure activities.
+                </p>
+              </div>
+
+              <!-- Service card 5 -->
+              <div
+                class="group transform transition-all duration-700 ease-in-out hover:-translate-y-2 hover:scale-[1.02] bg-card/50 border border-border/50 rounded-2xl p-6"
+                data-aos="zoom-in"
+                data-aos-delay="500"
+              >
+                <div
+                  class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                >
+                  🌙
+                </div>
+                <h4
+                  class="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2"
+                >
+                  Overnight Stay Support
+                </h4>
+                <p class="text-base leading-relaxed">
+                  A caring presence through the night for safety, comfort, and
+                  peace of mind.
+                </p>
+              </div>
+
+              <!-- Service card 6 -->
+              <div
+                class="group transform transition-all duration-700 ease-in-out hover:-translate-y-2 hover:scale-[1.02] bg-card/50 border border-border/50 rounded-2xl p-6"
+                data-aos="zoom-in"
+                data-aos-delay="600"
+              >
+                <div
+                  class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                >
+                  🕊️
+                </div>
+                <h4
+                  class="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2"
+                >
+                  End-of-Life Companionship
+                </h4>
+                <p class="text-base leading-relaxed">
+                  Gentle, respectful presence offering comfort and emotional
+                  support during final stages.
+                </p>
+              </div>
+
+              <!-- Service card 7 -->
+              <div
+                class="group transform transition-all duration-700 ease-in-out hover:-translate-y-2 hover:scale-[1.02] bg-card/50 border border-border/50 rounded-2xl p-6"
+                data-aos="zoom-in"
+                data-aos-delay="700"
+              >
+                <div
+                  class="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                >
+                  ♿
+                </div>
+                <h4
+                  class="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2"
+                >
+                  Wheelchair-Accessible Transport
+                  <span class="text-sm text-muted-foreground"
+                    >(Coming Soon)</span
+                  >
+                </h4>
+                <p class="text-base leading-relaxed">
+                  Comfortable, stay-in-wheelchair transport for appointments and
+                  trips, short or long distance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Modern Testimonials Section -->
+        <section id="testimonials" class="py-24 lg:py-32">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+              <span
+                class="mb-6 inline-block rounded-full px-6 py-2 text-primary border border-primary/30"
+                >Patient Reviews</span
+              >
+
+              <h3
+                class="text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
+              >
+                Stories of <span class="text-primary">Healing</span>
+              </h3>
+
+              <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Real experiences from families who trust us with their
+                healthcare needs.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+              <!-- Testimonial 1 -->
+              <div
+                class="group border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 transform rounded-2xl bg-card/50 p-6"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="pt-8 pb-6">
+                  <div class="flex items-center mb-6">
+                    <span class="text-amber-400">⭐️⭐️⭐️⭐️⭐️</span>
+                  </div>
+
+                  <p
+                    class="text-muted-foreground mb-6 leading-relaxed text-lg italic"
+                  >
+                    "Sarah's post-surgical care for my mother was exceptional.
+                    Her expertise and genuine compassion made our family's most
+                    difficult time so much easier to navigate."
+                  </p>
+
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-primary-foreground font-bold text-lg"
+                        >MJ</span
+                      >
+                    </div>
+                    <div>
+                      <p class="font-bold text-foreground text-lg">
+                        Margaret Johnson
+                      </p>
+                      <p class="text-sm text-muted-foreground font-medium">
+                        Daughter of Patient
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 2 -->
+              <div
+                class="group border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 transform rounded-2xl bg-card/50 p-6"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="pt-8 pb-6">
+                  <div class="flex items-center mb-6">
+                    <span class="text-amber-400">⭐️⭐️⭐️⭐️⭐️</span>
+                  </div>
+
+                  <p
+                    class="text-muted-foreground mb-6 leading-relaxed text-lg italic"
+                  >
+                    "The diabetes management program has been life-changing.
+                    Sarah's regular check-ins and education have helped me
+                    achieve the best blood sugar control I've had in years."
+                  </p>
+
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-primary-foreground font-bold text-lg"
+                        >RT</span
+                      >
+                    </div>
+                    <div>
+                      <p class="font-bold text-foreground text-lg">
+                        Robert Thompson
+                      </p>
+                      <p class="text-sm text-muted-foreground font-medium">
+                        Diabetes Patient
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 3 -->
+              <div
+                class="group border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 transform rounded-2xl bg-card/50 p-6"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div class="pt-8 pb-6">
+                  <div class="flex items-center mb-6">
+                    <span class="text-amber-400">⭐️⭐️⭐️⭐️⭐️</span>
+                  </div>
+
+                  <p
+                    class="text-muted-foreground mb-6 leading-relaxed text-lg italic"
+                  >
+                    "Professional, reliable, and truly caring. The Village Nurse
+                    gave us peace of mind during dad's recovery. I can't
+                    recommend Sarah highly enough."
+                  </p>
+
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-primary-foreground font-bold text-lg"
+                        >LM</span
+                      >
+                    </div>
+                    <div>
+                      <p class="font-bold text-foreground text-lg">
+                        Lisa Martinez
+                      </p>
+                      <p class="text-sm text-muted-foreground font-medium">
+                        Family Caregiver
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ultra-Modern Contact Section -->
+        <section
+          id="contact"
+          class="py-24 lg:py-32 bg-gradient-to-b from-background to-secondary/10"
+        >
+          <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+              <div class="text-center mb-20">
+                <span
+                  class="mb-6 inline-block rounded-full px-6 py-2 text-primary border border-primary/30"
+                  >Get Started</span
+                >
+
+                <h3
+                  class="text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
+                >
+                  Ready to Begin Your
+                  <span class="text-primary">Care Journey?</span>
+                </h3>
+
+                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  Schedule your free consultation today and discover
+                  personalised healthcare at its finest.
+                </p>
+              </div>
+
+              <div class="grid lg:grid-cols-2 gap-16">
+                <div class="space-y-8">
+                  <!-- Contact item 1 -->
+                  <div
+                    class="group transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30"
+                    data-aos="fade-right"
+                    data-aos-delay="100"
+                  >
+                    <div
+                      class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors"
+                    >
+                      📞
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-xl font-bold text-foreground mb-2">
+                        Call or Text
+                      </h4>
+                      <p class="text-muted-foreground mb-3">
+                        Available 24/7 for emergencies
+                      </p>
+                      <p class="text-primary font-bold text-lg mb-3">
+                        07398543965
+                      </p>
+                      <a
+                        href="tel:07398543965"
+                        class="inline-block px-4 py-2 border rounded-full text-sm"
+                        >Call Now</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Contact item 2 -->
+                  <div
+                    class="group transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30"
+                    data-aos="fade-right"
+                    data-aos-delay="200"
+                  >
+                    <div
+                      class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors"
+                    >
+                      ✉️
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-xl font-bold text-foreground mb-2">
+                        Email
+                      </h4>
+                      <p class="text-muted-foreground mb-3">
+                        Response within 2 hours
+                      </p>
+                      <p class="text-primary font-bold text-lg mb-3">
+                        info@thevillagenurse.co.uk
+                      </p>
+                      <a
+                        href="mailto:info@thevillagenurse.co.uk"
+                        class="inline-block px-4 py-2 border rounded-full text-sm"
+                        >Send Email</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Contact item 3 -->
+                  <div
+                    class="group transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30"
+                    data-aos="fade-right"
+                    data-aos-delay="300"
+                  >
+                    <div
+                      class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors"
+                    >
+                      📍
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="text-xl font-bold text-foreground mb-2">
+                        Service Area
+                      </h4>
+                      <p class="text-muted-foreground mb-3">
+                        Home visits within 30 miles
+                      </p>
+                      <p class="text-primary font-bold text-lg mb-3">
+                        Littleport, Ely East Cambridgeshire
+                      </p>
+                      <button
+                        class="inline-block px-4 py-2 border rounded-full text-sm"
+                      >
+                        Check Coverage
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Booking form (card) -->
+                <div
+                  class="border-border/50 bg-card/50 backdrop-blur-sm shadow-xl rounded-2xl p-6"
+                  data-aos="fade-left"
+                  data-aos-delay="200"
+                >
+                  <div class="pb-6">
+                    <h4 class="text-2xl font-bold">
+                      Book Your Free Consultation
+                    </h4>
+                    <p class="text-base">
+                      Complete the form below and I'll contact you within 24
+                      hours to discuss your needs.
+                    </p>
+                  </div>
+
+                  <form class="space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label
+                          class="text-sm font-semibold text-foreground block mb-3"
+                          >First Name</label
+                        >
+                        <input
+                          class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          placeholder="John"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          class="text-sm font-semibold text-foreground block mb-3"
+                          >Last Name</label
+                        >
+                        <input
+                          class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          placeholder="Doe"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        class="text-sm font-semibold text-foreground block mb-3"
+                        >Email</label
+                      >
+                      <input
+                        type="email"
+                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        class="text-sm font-semibold text-foreground block mb-3"
+                        >Phone</label
+                      >
+                      <input
+                        type="tel"
+                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                        placeholder="(555) 123-4567"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        class="text-sm font-semibold text-foreground block mb-3"
+                        >Tell me about your needs</label
+                      >
+                      <textarea
+                        rows="4"
+                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                        placeholder="Describe your care requirements, any specific conditions, or questions you may have..."
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      class="w-full py-6 text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 bg-primary text-primary-foreground font-semibold"
+                    >
+                      Schedule Free Consultation <span class="ml-2">➡️</span>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Modern Footer -->
+      <footer
+        class="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground py-16"
+      >
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col lg:flex-row justify-between items-center">
+            <div class="flex items-center space-x-4 mb-8 lg:mb-0">
+              <div
+                class="w-16 h-16 bg-beige-100 rounded-2xl flex items-center justify-center backdrop-blur-sm"
+              >
+                <img
+                  src="assets/logo.png"
+                  alt="The Village Nurse Logo"
+                  class="w-42 h-12 object-contain"
+                />
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold">The Village Nurse</h4>
+                <p class="text-primary-foreground/80 font-medium">
+                  Professional Healthcare at Home
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <span
+                class="bg-primary-foreground/10 text-primary-foreground px-4 py-2 rounded-full"
+                >🏥 Licensed RN</span
+              >
+              <span
+                class="bg-primary-foreground/10 text-primary-foreground px-4 py-2 rounded-full"
+                >🛡️ Fully Insured</span
+              >
+              <span
+                class="bg-primary-foreground/10 text-primary-foreground px-4 py-2 rounded-full"
+                >⭐ 24/7 Support</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="border-t border-primary-foreground/20 mt-12 pt-8 text-center"
+          >
+            <p class="text-primary-foreground/60 text-lg">
+              © 2024 The Village Nurse • All rights reserved • Licensed
+              Healthcare Professional • Serving with compassion
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- AOS script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 600,
+        easing: "ease-out",
+      });
+
+      // simple dark mode toggle that toggles 'dark' on <html>
+      const darkToggle = document.getElementById("darkToggle");
+      darkToggle.addEventListener("click", () => {
+        const html = document.documentElement;
+        html.classList.toggle("dark");
+        // persist preference
+        if (html.classList.contains("dark"))
+          localStorage.setItem("theme", "dark");
+        else localStorage.removeItem("theme");
+        darkToggle.textContent = html.classList.contains("dark") ? "☀️" : "🌙";
+      });
+      // restore if stored
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+        darkToggle.textContent = "☀️";
+      }
+    </script>
+  </body>
+</html>

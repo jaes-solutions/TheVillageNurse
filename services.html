@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Village Nurse - Services</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <style>
+      /* Minor fixes & helpers (keep if you use the project's design tokens) */
+      /* If you already have custom tokens like bg-background / text-foreground in your Tailwind config, they will apply. */
+      html.dark {
+        color-scheme: dark;
+      }
+
+      .bg-background {
+        background-color: #f8f4ef; /* your new light mode colour */
+      }
+      html.dark .bg-background {
+        background-color: #0f172a; /* your existing dark mode colour */
+      }
+
+      @font-face {
+        font-family: "Themysion";
+        src: url("assets/themysion.regular.ttf") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      .font-themysion {
+        font-family: "Themysion", cursive;
+      }
+      .blur-3xl {
+        filter: blur(48px);
+      }
+      /* tiny helper for the logo container image sizing */
+      .logo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Modern Header -->
+    <header
+      class="top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50 rounded-full overflow-hidden"
+    >
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <div class="relative">
+              <div
+                class="w-14 h-14 bg-white-800 rounded-2xl flex items-center justify-center bg-card"
+              >
+                <img
+                  src="assets/logo.png"
+                  alt="The Village Nurse Logo"
+                  class="logo-img"
+                />
+              </div>
+              <div
+                class="absolute -top-1 -right-1 w-4 h-4 rounded-full border-2 border-background bg-primary-500/70"
+              ></div>
+            </div>
+
+            <div>
+              <h1 class="text-2xl font-bold text-foreground tracking-tight">
+                The Village Nurse
+              </h1>
+              <p class="text-muted-foreground text-sm font-medium">
+                Licensed Healthcare Professional
+              </p>
+            </div>
+          </div>
+
+          <nav class="hidden md:flex items-center space-x-8">
+            <!-- simple dark mode toggle -->
+            <button
+              id="darkToggle"
+              aria-label="Toggle dark mode"
+              class="p-2 rounded-md hover:bg-accent/5 transition"
+            >
+              🌙
+            </button>
+
+            <a
+              href="about.html"
+              class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
+              >About</a
+            >
+            <a
+              href="services.html"
+              class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
+              >Services</a
+            >
+            <a
+              href="blog.html"
+              class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
+              >Blog</a
+            >
+
+            <a
+              href="contact.html"
+              class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
+              >Contact</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="relative">
+      <!-- 1. Companionship & Emotional Support -->
+      <div
+        class="sticky top-0 h-screen flex flex-col items-center justify-center text-center bg-cover bg-center text-white px-6 rounded-tl-3xl rounded-tr-3xl border-t-4 border-white"
+      >
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute top-0 left-0 w-full h-full object-cover rounded-tl-3xl rounded-tr-3xl"
+          src="assets/companion.mp4"
+        ></video>
+        <div class="relative z-10 p-6 rounded-lg" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-white" data-aos="fade-down">
+            Companionship & Emotional Support
+          </h2>
+          <p class="mt-4 max-w-2xl text-white" data-aos="fade-right">
+            We provide friendly visits to offer conversation and social
+            connection, helping to combat isolation. Our companions may
+            accompany clients to community activities, clubs, or local events,
+            offering emotional support to those living alone or in need of a
+            reassuring presence.
+          </p>
+          <ul class="mt-4 space-y-2 text-lg text-white" data-aos="fade-left">
+            <li class="text-white">
+              • Friendly visits to provide conversation and social connection
+            </li>
+            <li class="text-white">
+              • Accompaniment to community activities, clubs, or local events
+            </li>
+            <li class="text-white">
+              • Emotional support for those living alone or feeling isolated
+            </li>
+          </ul>
+          <div class="mt-20" data-aos="zoom-in">
+            <div class="relative flex items-center justify-center">
+              <a href="contact.html">
+                <button
+                  class="animate-bounce z-50 relative rounded-lg bg-teal-500 px-6 py-3 font-bold text-white hover:bg-green-700"
+                >
+                  Book now!
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Sitting-In & Befriending Services -->
+      <div
+        class="sticky top-0 h-screen flex flex-col items-center justify-center text-center bg-cover bg-center text-white px-6 rounded-tl-3xl rounded-tr-3xl border-t-4 border-white"
+      >
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute top-0 left-0 w-full h-full object-cover rounded-tl-3xl rounded-tr-3xl"
+          src="assets/sitting.mp4"
+        ></video>
+        <div class="relative z-10 p-6 rounded-lg" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-white" data-aos="fade-down">
+            Sitting-In & Befriending Services
+          </h2>
+          <p class="mt-4 max-w-2xl text-white" data-aos="fade-left">
+            Whether you need short or longer visits, our team keeps your loved
+            one company when you cannot be there. From light conversation to
+            shared activities, or simply being a comforting presence, our
+            service helps reduce feelings of loneliness and promotes emotional
+            wellbeing.
+          </p>
+          <ul class="mt-4 space-y-2 text-lg text-white" data-aos="fade-right">
+            <li class="text-white">
+              • Short or longer visits to keep your loved one company
+            </li>
+            <li class="text-white">
+              • Light conversation, shared activities, or simply a reassuring
+              presence
+            </li>
+            <li class="text-white">
+              • Helps reduce loneliness and promotes emotional wellbeing
+            </li>
+          </ul>
+          <div class="mt-20" data-aos="zoom-in">
+            <div class="relative flex items-center justify-center">
+              <a href="#contact">
+                <button
+                  class="animate-bounce z-50 relative rounded-lg bg-teal-500 px-6 py-3 font-bold text-white hover:bg-green-700"
+                >
+                  Book now!
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Wellness Visits -->
+      <div
+        class="sticky top-0 h-screen flex flex-col items-center justify-center text-center bg-cover bg-center text-white px-6 rounded-tl-3xl rounded-tr-3xl border-t-4 border-white"
+      >
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute top-0 left-0 w-full h-full object-cover rounded-tl-3xl rounded-tr-3xl"
+          src="assets/wellness.mp4"
+        ></video>
+        <div class="relative z-10 p-6 rounded-lg" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-white" data-aos="fade-right">
+            Wellness Visits
+          </h2>
+          <p class="mt-4 max-w-2xl text-white" data-aos="fade-left">
+            Our regular check-ins ensure the health and safety of clients in
+            their own homes. We monitor general wellbeing, offer gentle
+            encouragement, and support clients in maintaining routines for a
+            healthy and balanced lifestyle.
+          </p>
+          <ul class="mt-4 space-y-2 text-lg text-white" data-aos="fade-up">
+            <li class="text-white">
+              • Regular check-ins to ensure health and safety
+            </li>
+            <li class="text-white">
+              • Monitoring general wellbeing with gentle encouragement
+            </li>
+            <li class="text-white">
+              • Support for maintaining routines and a healthy lifestyle
+            </li>
+          </ul>
+          <div class="mt-20" data-aos="zoom-in">
+            <div class="relative flex items-center justify-center">
+              <a href="#contact">
+                <button
+                  class="animate-bounce z-50 relative rounded-lg bg-teal-500 px-6 py-3 font-bold text-white hover:bg-green-700"
+                >
+                  Book now!
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Escort & Buddy Support -->
+      <div
+        class="sticky top-0 h-screen flex flex-col items-center justify-center text-center bg-cover bg-center text-white px-6 rounded-tl-3xl rounded-tr-3xl border-t-4 border-white"
+      >
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute top-0 left-0 w-full h-full object-cover rounded-tl-3xl rounded-tr-3xl"
+          src="assets/escort.mp4"
+        ></video>
+        <div class="relative z-10 p-6 rounded-lg" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-white" data-aos="fade-down">
+            Escort & Buddy Support
+          </h2>
+          <p class="mt-4 max-w-2xl text-white" data-aos="fade-right">
+            We accompany clients to hospital appointments, GP visits, or
+            specialist consultations. Our team also supports shopping trips,
+            personal errands, and leisure outings, providing a reliable buddy to
+            make each experience more comfortable and stress-free.
+          </p>
+          <ul class="mt-4 space-y-2 text-lg text-white" data-aos="fade-left">
+            <li class="text-white">
+              • Accompaniment to hospital, GP, or specialist appointments
+            </li>
+            <li class="text-white">
+              • Assistance with shopping trips, personal errands, and leisure
+              outings
+            </li>
+            <li class="text-white">
+              • Providing a reassuring buddy for comfort and confidence
+            </li>
+          </ul>
+          <div class="mt-20" data-aos="zoom-in">
+            <div class="relative flex items-center justify-center">
+              <a href="#contact">
+                <button
+                  class="animate-bounce z-50 relative rounded-lg bg-teal-500 px-6 py-3 font-bold text-white hover:bg-green-700"
+                >
+                  Book now!
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Overnight Stay Support -->
+      <div
+        class="sticky top-0 h-screen flex flex-col items-center justify-center text-center bg-cover bg-center text-white px-6 rounded-tl-3xl rounded-tr-3xl border-t-4 border-white"
+      >
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute top-0 left-0 w-full h-full object-cover rounded-tl-3xl rounded-tr-3xl"
+          src="assets/overnight.mp4"
+        ></video>
+        <div class="relative z-10 p-6 rounded-lg" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-white" data-aos="fade-right">
+            Overnight Stay Support
+          </h2>
+          <p class="mt-4 max-w-2xl text-white" data-aos="fade-left">
+            Our overnight support offers a reassuring presence through the
+            night, assisting with mobility, comfort, and safety. Families can
+            have peace of mind knowing their loved one is cared for and not
+            alone during the night.
+          </p>
+          <ul class="mt-4 space-y-2 text-lg text-white" data-aos="fade-up">
+            <li class="text-white">
+              • Reassuring presence during overnight hours
+            </li>
+            <li class="text-white">
+              • Assistance with mobility, comfort, and safety
+            </li>
+            <li class="text-white">
+              • Ensures your loved one is never alone at night
+            </li>
+          </ul>
+          <div class="mt-20" data-aos="zoom-in">
+            <div class="relative flex items-center justify-center">
+              <a href="#contact">
+                <button
+                  class="animate-bounce z-50 relative rounded-lg bg-teal-500 px-6 py-3 font-bold text-white hover:bg-green-700"
+                >
+                  Book now!
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. End-of-Life Companionship -->
+      <div
+        class="sticky top-0 h-screen flex flex-col items-center justify-center text-center bg-cover bg-center text-white px-6 rounded-tl-3xl rounded-tr-3xl border-t-4 border-white"
+      >
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute top-0 left-0 w-full h-full object-cover rounded-tl-3xl rounded-tr-3xl"
+          src="assets/end.mp4"
+        ></video>
+        <div class="relative z-10 p-6 rounded-lg" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-white" data-aos="fade-down">
+            End-of-Life Companionship (Non-Medical)
+          </h2>
+          <p class="mt-4 max-w-2xl text-white" data-aos="fade-left">
+            We provide gentle, compassionate presence during the final stages of
+            life. Our team supports both clients and their families with dignity
+            and respect, offering emotional comfort during challenging moments.
+          </p>
+          <ul class="mt-4 space-y-2 text-lg text-white" data-aos="fade-right">
+            <li class="text-white">
+              • Gentle, supportive companionship during the final stages
+            </li>
+            <li class="text-white">• Emotional support for family members</li>
+            <li class="text-white">
+              • Respectful, dignified care tailored to individual needs
+            </li>
+          </ul>
+          <div class="mt-20" data-aos="zoom-in">
+            <div class="relative flex items-center justify-center">
+              <a href="#contact">
+                <button
+                  class="animate-bounce z-50 relative rounded-lg bg-teal-500 px-6 py-3 font-bold text-white hover:bg-green-700"
+                >
+                  Book now!
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Wheelchair-Accessible Transport -->
+      <div
+        class="sticky top-0 h-screen flex flex-col items-center justify-center text-center bg-cover bg-center text-white px-6 rounded-tl-3xl rounded-tr-3xl border-t-4 border-white"
+      >
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute top-0 left-0 w-full h-full object-cover rounded-tl-3xl rounded-tr-3xl"
+          src="assets/wheelchair.mp4"
+        ></video>
+        <div class="relative z-10 p-6 rounded-lg" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-white" data-aos="fade-down">
+            Wheelchair-Accessible Transport (Coming Soon)
+          </h2>
+          <p class="mt-4 max-w-2xl text-white" data-aos="fade-right">
+            Safe and comfortable transport for hospital, medical, or social
+            appointments. Our service allows clients to remain in their
+            wheelchair for ease and safety. Available to companionship and
+            non-companionship clients, we offer both local and longer-distance
+            trips.
+          </p>
+          <ul class="mt-4 space-y-2 text-lg text-white" data-aos="fade-left">
+            <li class="text-white">
+              • Transport for hospital, medical, or social visits
+            </li>
+            <li class="text-white">
+              • Stay-in-wheelchair access for comfort and safety
+            </li>
+            <li class="text-white">
+              • Available for both companionship and non-companionship clients
+            </li>
+            <li class="text-white">
+              • Local and longer-distance trips available
+            </li>
+          </ul>
+          <div class="mt-20" data-aos="zoom-in">
+            <div class="relative flex items-center justify-center">
+              <a href="#contact">
+                <button
+                  class="animate-bounce z-50 relative rounded-lg bg-teal-500 px-6 py-3 font-bold text-white hover:bg-green-700"
+                >
+                  Book now!
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      AOS.init({
+        duration: 1200,
+        easing: "ease-in-out",
+        once: true,
+      });
+    </script>
+  </body>
+</html>
