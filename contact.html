@@ -23,15 +23,9 @@
       }
       /* Minor fixes & helpers (keep if you use the project's design tokens) */
       /* If you already have custom tokens like bg-background / text-foreground in your Tailwind config, they will apply. */
-      html.dark {
-        color-scheme: dark;
-      }
 
       .bg-background {
         background-color: #f8f4ef; /* your new light mode colour */
-      }
-      html.dark .bg-background {
-        background-color: #000000; /* your existing dark mode colour */
       }
 
       @font-face {
@@ -94,7 +88,7 @@
       }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+  <body class="bg-gray-50 text-gray-800">
    <header
         id="mainHeader"
         class="sticky top-0 z-50 bg-background border-b border-border/50 rounded-full overflow-hidden transition-colors duration-500 mt-4 mx-4"
@@ -130,33 +124,25 @@
             </div>
 
             <nav class="hidden md:flex items-center space-x-8">
-              <!-- simple dark mode toggle -->
-              <button
-                id="darkToggle"
-                aria-label="Toggle dark mode"
-                class="p-2 rounded-md hover:bg-accent/5 transition"
-              >
-                🌙
-              </button>
 
               <a
                 href="about.html"
-                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium dark:text-gray-200"
+                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
                 >About</a
               >
               <a
                 href="services.html"
-                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium dark:text-gray-200"
+                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
                 >Services</a
               >
               <a
                 href="blog.html"
-                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium dark:text-gray-200"
+                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
                 >Blog</a
               >
               <a
                 href="contact.html"
-                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium dark:text-gray-200"
+                class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
                 >Contact</a
               >
             </nav>
@@ -178,9 +164,9 @@
         >
           <div class="absolute inset-0">
             <!-- Dots background -->
-            <div class="absolute inset-0 -z-20 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-gray-900 dark:bg-[radial-gradient(#2d3748_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="absolute inset-0 -z-20 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
             <!-- Radial overlay -->
-            <div class="absolute top-0 z-[-10] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(65,93,103,0.25),rgba(255,255,255,0))] dark:bg-gray-900 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(65,93,103,0.40),rgba(0,0,0,0))]"></div>
+            <div class="absolute top-0 z-[-10] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(65,93,103,0.25),rgba(255,255,255,0))]"></div>
           </div>
           <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
@@ -191,12 +177,12 @@
                 >
 
                 <h3
-                  class="text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight dark:text-white"
+                  class="text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
                 >
                   Ready to Begin Your
                   <span class="text-primary">Care Journey?</span>
                 </h3>
-                <p class="text-xl text-muted-foreground max-w-2xl mx-auto dark:text-gray-300">
+                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
                   Schedule your free consultation today and discover
                   personalised healthcare at its finest.
                 </p>
@@ -206,7 +192,7 @@
                 <div class="space-y-8">
                   <!-- Contact item 1 -->
                   <div
-                    class="group bg-background transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 dark:bg-gray-800/50 dark:border-gray-700"
+                    class="group bg-background transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30"
                     data-aos="fade-right"
                     data-aos-delay="100"
                   >
@@ -216,24 +202,24 @@
                       📞
                     </div>
                     <div class="flex-1">
-                      <h4 class="text-xl font-bold text-foreground mb-2 dark:text-white">
+                      <h4 class="text-xl font-bold text-foreground mb-2">
                         Call or Text
                       </h4>
-                      <p class="text-muted-foreground mb-3 dark:text-gray-300">
+                      <p class="text-muted-foreground mb-3">
                         Available 24/7 for emergencies
                       </p>
                       <p class="text-primary font-bold text-lg mb-3">
-                        07716593874
+                        01353 634334
                       </p>
                       <a
-                        href="tel:07716593874"
-                        class="inline-block px-4 py-2 rounded-full text-sm bg-[#415d67] text-white hover:bg-[#32464d] transition dark:bg-[#1f2a2e] dark:text-white dark:hover:bg-[#2e3a3e]"
+                        href="tel:01353 634334"
+                        class="inline-block px-4 py-2 rounded-full text-sm bg-[#415d67] text-white hover:bg-[#32464d] transition"
                         >Call Now</a
                       >
                       <a
-                        href="https://wa.me/447716593874?text=Hello%20Village%20Nurse%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services."
+                        href="https://wa.me/447398543965?text=Hello%20Village%20Nurse%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services."
                         target="_blank"
-                        class="inline-block ml-3 px-4 py-2 rounded-full text-sm bg-[#25D366] text-white hover:bg-[#1ebe5d] transition dark:bg-[#1f2a2e] dark:text-white dark:hover:bg-[#2e3a3e]"
+                        class="inline-block ml-3 px-4 py-2 rounded-full text-sm bg-[#25D366] text-white hover:bg-[#1ebe5d] transition"
                         >WhatsApp</a
                       >
                     </div>
@@ -241,7 +227,7 @@
 
                   <!-- Contact item 2 -->
                   <div
-                    class="group bg-background transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 dark:bg-gray-800/50 dark:border-gray-700"
+                    class="group bg-background transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30"
                     data-aos="fade-right"
                     data-aos-delay="200"
                   >
@@ -251,10 +237,10 @@
                       ✉️
                     </div>
                     <div class="flex-1">
-                      <h4 class="text-xl font-bold text-foreground mb-2 dark:text-white">
+                      <h4 class="text-xl font-bold text-foreground mb-2">
                         Email
                       </h4>
-                      <p class="text-muted-foreground mb-3 dark:text-gray-300">
+                      <p class="text-muted-foreground mb-3">
                         Response within 2 hours
                       </p>
                       <p class="text-primary font-bold text-lg mb-3">
@@ -262,7 +248,7 @@
                       </p>
                       <a
                         href="mailto:info@thevillagenurse.co.uk"
-                        class="inline-block px-4 py-2 rounded-full text-sm bg-[#415d67] text-white hover:bg-[#32464d] transition dark:bg-[#1f2a2e] dark:text-white dark:hover:bg-[#2e3a3e]"
+                        class="inline-block px-4 py-2 rounded-full text-sm bg-[#415d67] text-white hover:bg-[#32464d] transition"
                         >Send Email</a
                       >
                     </div>
@@ -270,7 +256,7 @@
 
                   <!-- Contact item 3 -->
                   <div
-                    class="group bg-background transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 dark:bg-gray-800/50 dark:border-gray-700"
+                    class="group bg-background transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30"
                     data-aos="fade-right"
                     data-aos-delay="300"
                   >
@@ -280,37 +266,38 @@
                       📍
                     </div>
                     <div class="flex-1">
-                      <h4 class="text-xl font-bold text-foreground mb-2 dark:text-white">
+                      <h4 class="text-xl font-bold text-foreground mb-2">
                         Service Area
                       </h4>
-                      <p class="text-muted-foreground mb-3 dark:text-gray-300">
-                        Home visits within 30 miles
+                      <p class="text-muted-foreground mb-3">
+                        We provide nurse-led, premium home care and companionship across Cambridgeshire, Suffolk & Norfolk with private arrangements available further afield by request.
+
                       </p>
                       <p class="text-primary font-bold text-lg mb-3">
-                        Littleport, Ely East Cambridgeshire
+                        Cambridgeshire, Suffolk & Norfolk
                       </p>
-                      <button
-                        class="inline-block px-4 py-2 rounded-full text-sm bg-[#415d67] text-white hover:bg-[#32464d] transition dark:bg-[#1f2a2e] dark:text-white dark:hover:bg-[#2e3a3e]"
+                      <a
+                        href="#service"
+                        class="inline-block px-4 py-2 rounded-full text-sm bg-[#415d67] text-white hover:bg-[#32464d] transition"
                       >
                         Check Coverage
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
 
                 <!-- Booking form (card) -->
                 <div
-                  class="border-border/50 bg-background backdrop-blur-sm shadow-xl rounded-2xl p-6 dark:bg-gray-800/50 dark:border-gray-700"
+                  class="border-border/50 bg-background backdrop-blur-sm shadow-xl rounded-2xl p-6"
                   data-aos="fade-left"
                   data-aos-delay="200"
                 >
                   <div class="pb-6">
-                    <h4 class="text-2xl font-bold dark:text-white">
+                    <h4 class="text-2xl font-bold">
                       Book Your Free Consultation
                     </h4>
-                    <p class="text-base dark:text-gray-300">
-                      Complete the form below and We'll contact you within 24
-                      hours to discuss your needs.
+                    <p class="text-base">
+                      Alternatively, complete the form below and a member of our nurse-led team will call you back at a time that suits you.
                     </p>
                   </div>
 
@@ -318,21 +305,21 @@
                     <div class="grid grid-cols-2 gap-4">
                       <div>
                         <label
-                          class="text-sm font-semibold text-foreground block mb-3 dark:text-gray-300"
+                          class="text-sm font-semibold text-foreground block mb-3"
                           >First Name</label
                         >
                         <input
-                          class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all dark:bg-gray-900/50 dark:border-gray-700 dark:text-white"
+                          class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                           placeholder="John"
                         />
                       </div>
                       <div>
                         <label
-                          class="text-sm font-semibold text-foreground block mb-3 dark:text-gray-300"
+                          class="text-sm font-semibold text-foreground block mb-3"
                           >Last Name</label
                         >
                         <input
-                          class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all dark:bg-gray-900/50 dark:border-gray-700 dark:text-white"
+                          class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                           placeholder="Doe"
                         />
                       </div>
@@ -340,43 +327,43 @@
 
                     <div>
                       <label
-                        class="text-sm font-semibold text-foreground block mb-3 dark:text-gray-300"
+                        class="text-sm font-semibold text-foreground block mb-3"
                         >Email</label
                       >
                       <input
                         type="email"
-                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all dark:bg-gray-900/50 dark:border-gray-700 dark:text-white"
+                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         placeholder="john@example.com"
                       />
                     </div>
 
                     <div>
                       <label
-                        class="text-sm font-semibold text-foreground block mb-3 dark:text-gray-300"
+                        class="text-sm font-semibold text-foreground block mb-3"
                         >Phone</label
                       >
                       <input
                         type="tel"
-                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all dark:bg-gray-900/50 dark:border-gray-700 dark:text-white"
+                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         placeholder="(555) 123-4567"
                       />
                     </div>
 
                     <div>
                       <label
-                        class="text-sm font-semibold text-foreground block mb-3 dark:text-gray-300"
+                        class="text-sm font-semibold text-foreground block mb-3"
                         >Tell me about your needs</label
                       >
                       <textarea
                         rows="4"
-                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none dark:bg-gray-900/50 dark:border-gray-700 dark:text-white"
+                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
                         placeholder="Describe your care requirements, any specific conditions, or questions you may have..."
                       ></textarea>
                     </div>
 
                     <button
                       type="submit"
-                      class="w-full py-6 text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 bg-[#415d67] text-white font-semibold hover:bg-[#32464d] dark:bg-[#1f2a2e] dark:text-white dark:hover:bg-[#2e3a3e]"
+                      class="w-full py-6 text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 bg-[#415d67] text-white font-semibold hover:bg-[#32464d]"
                     >
                       Schedule Free Consultation <span class="ml-2">➡️</span>
                     </button>
@@ -388,32 +375,68 @@
         </section>
       </div>
 
+      <!-- Service Area Section -->
+<section id="service" class="relative py-24 bg-background">
+  <div class="container mx-auto px-6 max-w-5xl">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-[#415d67] mb-6 flex items-center justify-center gap-2">
+        Our Service Area
+      </h2>
+      <p class="text-lg text-slate-700 max-w-3xl mx-auto">
+        We provide nurse-led, premium home care and companionship across 
+        <span class="font-semibold text-[#415d67]">Cambridgeshire, Suffolk & Norfolk</span> 
+        with private arrangements available further afield by request.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Ely</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Littleport (Head Office)</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Soham</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Cambridge</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Peterborough</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Huntingdon</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">St Ives</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">St Neots</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Newmarket</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Bury St Edmunds</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Mildenhall</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Thetford</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Brandon</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">King’s Lynn</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Downham Market</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Wisbech</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">March</div>
+      <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition">Chatteris</div>
+    </div>
+  </div>
+</section>
     <!-- Free Discovery Call Section -->
     <div class="relative h-screen">
       <!-- Background Pattern -->
       <div class="absolute inset-0">
-        <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#415d67_100%)] dark:bg-gray-900 dark:[background:radial-gradient(125%_125%_at_50%_10%,#23272f_40%,#415d67_100%)]"></div>
+        <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#415d67_100%)]"></div>
       </div>
 
       <!-- Hero Content -->
       <div class="relative z-10 flex h-full flex-col items-center justify-center px-4">
         <div class="max-w-3xl text-center">
-          <h1 class="mb-8 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-[#415d67] dark:text-white">
-            Book a <span class="text-[#415d67] dark:text-primary">Free Discovery Call</span>
+          <h1 class="mb-8 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-[#415d67]">
+            Book a <span class="text-[#415d67]">Free Discovery Call</span>
           </h1>
-          <p class="mx-auto mb-8 max-w-2xl text-lg text-slate-700 dark:text-gray-300">
+          <p class="mx-auto mb-8 max-w-2xl text-lg text-slate-700">
             Schedule a complimentary 20-minute call with The Village Nurse to learn how we can support you or your loved ones with personalized care.
           </p>
           <div class="flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:info@villagenurse.com"
-              class="rounded-lg px-6 py-3 font-medium bg-[#415d67] text-white hover:bg-[#32464d] transition dark:bg-[#1f2a2e] dark:text-white dark:hover:bg-[#2e3a3e]"
+              href="https://wa.me/447398543965?text=Hello%20Village%20Nurse%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services."
+              class="rounded-lg px-6 py-3 font-medium bg-[#415d67] text-white hover:bg-[#32464d] transition"
             >
               Schedule Now
             </a>
             <a
-              href="tel:07716593874"
-              class="rounded-lg border px-6 py-3 font-medium border-slate-200 bg-white text-[#415d67] hover:bg-slate-50 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
+              href="tel:01353634334"
+              class="rounded-lg border px-6 py-3 font-medium border-slate-200 bg-white text-[#415d67] hover:bg-slate-50"
             >
               Call Us
             </a>
@@ -440,23 +463,6 @@
         duration: 1000,
         easing: "ease-out",
       });
-
-      // simple dark mode toggle that toggles 'dark' on <html>
-      const darkToggle = document.getElementById("darkToggle");
-      darkToggle.addEventListener("click", () => {
-        const html = document.documentElement;
-        html.classList.toggle("dark");
-        // persist preference
-        if (html.classList.contains("dark"))
-          localStorage.setItem("theme", "dark");
-        else localStorage.removeItem("theme");
-        darkToggle.textContent = html.classList.contains("dark") ? "☀️" : "🌙";
-      });
-      // restore if stored
-      if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark");
-        darkToggle.textContent = "☀️";
-      }
 
       // Change navbar background on scroll
       const header = document.getElementById("mainHeader");

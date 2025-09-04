@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>The Village Nurse | Home</title>
+    <title>The Village Nurse Ltd. | Premium Nurse-Led Home Care & Support</title>
     <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -73,15 +73,8 @@
     <style>
       /* Minor fixes & helpers (keep if you use the project's design tokens) */
       /* If you already have custom tokens like bg-background / text-foreground in your Tailwind config, they will apply. */
-      html.dark {
-        color-scheme: dark;
-      }
-
       .bg-background {
         background-color: #f8f4ef; /* your new light mode colour */
-      }
-      html.dark .bg-background {
-        background-color: #0f172a; /* your existing dark mode colour */
       }
 
       @font-face {
@@ -261,15 +254,6 @@
             </div>
 
             <nav class="hidden md:flex items-center space-x-8">
-              <!-- simple dark mode toggle -->
-              <button
-                id="darkToggle"
-                aria-label="Toggle dark mode"
-                class="p-2 rounded-md hover:bg-accent/5 transition"
-              >
-                🌙
-              </button>
-
               <a
                 href="about.html"
                 class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
@@ -285,7 +269,6 @@
                 class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
                 >Blog</a
               >
-
               <a
                 href="contact.html"
                 class="text-foreground/80 hover:text-primary transition-all duration-300 font-medium"
@@ -304,9 +287,9 @@
       </header>
       <!-- Mobile Menu -->
       <div
-        id="mobileMenu"
-        class="hidden md:hidden absolute top-[4.5rem] left-0 w-full flex flex-col items-center space-y-4 py-6 bg-background shadow-md border-t border-gray-200 z-50 rounded-lg"
-      >
+  id="mobileMenu"
+  class="hidden md:hidden fixed top-[4.5rem] left-0 w-full flex flex-col items-center space-y-4 py-6 bg-background shadow-md border-t border-gray-200 z-50"
+>
         <a
           href="index.html"
           class="block text-foreground/80 hover:text-primary font-medium"
@@ -443,9 +426,9 @@
                 data-aos-duration="800"
                 class="text-6xl lg:text-7xl font-bold text-[#415d67] mb-8 leading-[0.9] tracking-tight"
               >
-                Premium Healthcare
+                Premium Nurse-Led 
                 <br />
-                <span class="text-[#415d67]">At Your Doorstep</span>
+                <span class="text-[#415d67]">Home Care & Support</span>
               </h2>
 
               <!-- Subtext -->
@@ -467,21 +450,21 @@
                 data-aos-delay="400"
                 class="flex flex-col sm:flex-row gap-6 justify-center items-center"
               >
-                <button
-                  class="text-lg px-10 py-6 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 group bg-primary text-primary-foreground font-semibold"
+                <a href="contact.html"
+                  class="text-lg px-10 py-6 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 group bg-[#415d67] text-white font-semibold"
                 >
                   Schedule Free Consultation
                   <span
                     class="ml-2 inline-block transform group-hover:translate-x-1 transition-transform"
                     >➡️</span
                   >
-                </button>
+                </a>
 
-                <button
+                <a href="services.html"
                   class="text-lg px-10 py-6 rounded-2xl border-2 hover:bg-accent/5 hover:scale-105 hover:-translate-y-1 transition-transform duration-300 bg-transparent"
                 >
                   View Services
-                </button>
+                </a>
               </div>
 
               <!-- Stats -->
@@ -493,9 +476,9 @@
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  <div class="text-3xl font-bold text-primary mb-2">500+</div>
+                  <div class="text-3xl font-bold text-primary mb-2 counter" data-target="20" data-suffix="+">0</div>
                   <div class="text-muted-foreground font-medium">
-                    Patients Treated
+                    Patients Visited
                   </div>
                 </div>
 
@@ -504,7 +487,7 @@
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
-                  <div class="text-3xl font-bold text-primary mb-2">24/7</div>
+                  <div class="text-3xl font-bold text-primary mb-2 counter" data-target="24" data-suffix="/7">0</div>
                   <div class="text-muted-foreground font-medium">
                     Emergency Support
                   </div>
@@ -515,7 +498,7 @@
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
-                  <div class="text-3xl font-bold text-primary mb-2">100%</div>
+                  <div class="text-3xl font-bold text-primary mb-2 counter" data-target="100" data-suffix="%">0</div>
                   <div class="text-muted-foreground font-medium">
                     Licensed & Insured
                   </div>
@@ -532,13 +515,13 @@
               <div class="order-2 lg:order-1" data-aos="fade-right">
                 <span
                   class="mb-6 inline-block rounded-full px-4 py-2 text-primary border border-primary/30"
-                  >Meet The Founder</span
+                  >Our Story</span
                 >
 
                 <h3
                   class="text-5xl lg:text-6xl font-bold text-[#415d67] mb-8 leading-tight"
                 >
-                  Vikky Etokakpan, <span class="text-[#415d67]">RN</span>
+                  Who We <span class="text-[#415d67]">Are</span>
                 </h3>
 
                 <p class="text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -551,7 +534,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                   <div class="flex items-center space-x-4">
                     <div
-                      class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center"
+                      class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center"
                     >
                       🏅
                     </div>
@@ -567,7 +550,7 @@
 
                   <div class="flex items-center space-x-4">
                     <div
-                      class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center"
+                      class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center"
                     >
                       🛡️
                     </div>
@@ -583,7 +566,7 @@
 
                   <div class="flex items-center space-x-4">
                     <div
-                      class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center"
+                      class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center"
                     >
                       👥
                     </div>
@@ -599,7 +582,7 @@
 
                   <div class="flex items-center space-x-4">
                     <div
-                      class="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center"
+                      class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center"
                     >
                       ✅
                     </div>
@@ -979,25 +962,18 @@
         </section>
 
         <!-- Ultra-Modern Contact Section -->
-        <section
-          id="contact"
-          class="py-24 lg:py-32 bg-gradient-to-b from-background to-secondary/10"
-        >
+        <section id="contact" class="py-24 lg:py-32 bg-gradient-to-b from-background to-secondary/10">
           <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
               <div class="text-center mb-20">
-                <span
-                  class="mb-6 inline-block rounded-full px-6 py-2 text-primary border border-primary/30"
-                  >Get Started</span
-                >
+                <span class="mb-6 inline-block rounded-full px-6 py-2 text-primary border border-primary/30">
+                  Get Started
+                </span>
 
-                <h3
-                  class="text-5xl lg:text-6xl font-bold text-[#415d67] mb-6 leading-tight"
-                >
+                <h3 class="text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                   Ready to Begin Your
-                  <span class="text-[#415d67]">Care Journey?</span>
+                  <span class="text-primary">Care Journey?</span>
                 </h3>
-
                 <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
                   Schedule your free consultation today and discover
                   personalised healthcare at its finest.
@@ -1007,173 +983,85 @@
               <div class="grid lg:grid-cols-2 gap-16">
                 <div class="space-y-8">
                   <!-- Contact item 1 -->
-                  <div
-                    class="group transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30"
-                    data-aos="fade-right"
-                    data-aos-delay="100"
-                  >
-                    <div
-                      class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors"
-                    >
+                  <div class="group bg-background transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30" data-aos="fade-right" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                       📞
                     </div>
                     <div class="flex-1">
-                      <h4 class="text-xl font-bold text-[#415d67] mb-2">
-                        Call or Text
-                      </h4>
-                      <p class="text-muted-foreground mb-3">
-                        Available 24/7 for emergencies
-                      </p>
-                      <p class="text-primary font-bold text-lg mb-3">
-                        07716593874
-                      </p>
-                      <a
-                        href="tel:07716593874"
-                        class="inline-block px-4 py-2 border rounded-full text-sm"
-                        >Call Now</a
-                      >
+                      <h4 class="text-xl font-bold text-foreground mb-2">Call or Text</h4>
+                      <p class="text-muted-foreground mb-3">Available 24/7 for emergencies</p>
+                      <p class="text-primary font-bold text-lg mb-3">01353 634334</p>
+                      <a href="tel:01353 634334" class="inline-block px-4 py-2 rounded-full text-sm bg-[#415d67] text-white hover:bg-[#32464d] transition">Call Now</a>
+                      <a href="https://wa.me/447398543965?text=Hello%20Village%20Nurse%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" class="inline-block ml-3 px-4 py-2 rounded-full text-sm bg-[#25D366] text-white hover:bg-[#1ebe5d] transition">WhatsApp</a>
                     </div>
                   </div>
 
                   <!-- Contact item 2 -->
-                  <div
-                    class="group transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30"
-                    data-aos="fade-right"
-                    data-aos-delay="200"
-                  >
-                    <div
-                      class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors"
-                    >
+                  <div class="group bg-background transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30" data-aos="fade-right" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                       ✉️
                     </div>
                     <div class="flex-1">
-                      <h4 class="text-xl font-bold text-[#415d67] mb-2">
-                        Email
-                      </h4>
-                      <p class="text-muted-foreground mb-3">
-                        Response within 2 hours
-                      </p>
-                      <p class="text-primary font-bold text-lg mb-3">
-                        info@thevillagenurse.co.uk
-                      </p>
-                      <a
-                        href="mailto:info@thevillagenurse.co.uk"
-                        class="inline-block px-4 py-2 border rounded-full text-sm"
-                        >Send Email</a
-                      >
+                      <h4 class="text-xl font-bold text-foreground mb-2">Email</h4>
+                      <p class="text-muted-foreground mb-3">Response within 2 hours</p>
+                      <p class="text-primary font-bold text-lg mb-3">info@thevillagenurse.co.uk</p>
+                      <a href="mailto:info@thevillagenurse.co.uk" class="inline-block px-4 py-2 rounded-full text-sm bg-[#415d67] text-white hover:bg-[#32464d] transition">Send Email</a>
                     </div>
                   </div>
 
                   <!-- Contact item 3 -->
-                  <div
-                    class="group transform transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30"
-                    data-aos="fade-right"
-                    data-aos-delay="300"
-                  >
-                    <div
-                      class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors"
-                    >
+                  <div class="group bg-background transition-transform duration-700 ease-in-out hover:scale-[1.03] flex items-start space-x-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30" data-aos="fade-right" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                       📍
                     </div>
                     <div class="flex-1">
-                      <h4 class="text-xl font-bold text-[#415d67] mb-2">
-                        Service Area
-                      </h4>
+                      <h4 class="text-xl font-bold text-foreground mb-2">Service Area</h4>
                       <p class="text-muted-foreground mb-3">
-                        Home visits within 30 miles
+                        We provide nurse-led, premium home care and companionship across Cambridgeshire, Suffolk & Norfolk with private arrangements available further afield by request.
                       </p>
-                      <p class="text-primary font-bold text-lg mb-3">
-                        Littleport, Ely East Cambridgeshire
-                      </p>
-                      <button
-                        class="inline-block px-4 py-2 border rounded-full text-sm"
-                      >
-                        Check Coverage
-                      </button>
+                      <p class="text-primary font-bold text-lg mb-3">Cambridgeshire, Suffolk & Norfolk</p>
+                      <a href="contact.html#service" class="inline-block px-4 py-2 rounded-full text-sm bg-[#415d67] text-white hover:bg-[#32464d] transition">Check Coverage</a>
                     </div>
                   </div>
                 </div>
 
                 <!-- Booking form (card) -->
-                <div
-                  class="border-border/50 bg-card/50 backdrop-blur-sm shadow-xl rounded-2xl p-6"
-                  data-aos="fade-left"
-                  data-aos-delay="200"
-                >
+                <div class="border-border/50 bg-background backdrop-blur-sm shadow-xl rounded-2xl p-6" data-aos="fade-left" data-aos-delay="200">
                   <div class="pb-6">
-                    <h4 class="text-2xl font-bold text-[#415d67]">
-                      Book Your Free Consultation
-                    </h4>
+                    <h4 class="text-2xl font-bold">Book Your Free Consultation</h4>
                     <p class="text-base">
-                      Complete the form below and I'll contact you within 24
-                      hours to discuss your needs.
+                      Alternatively, complete the form below and a member of our nurse-led team will call you back at a time that suits you.
                     </p>
                   </div>
 
                   <form class="space-y-6">
                     <div class="grid grid-cols-2 gap-4">
                       <div>
-                        <label
-                          class="text-sm font-semibold text-foreground block mb-3"
-                          >First Name</label
-                        >
-                        <input
-                          class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                          placeholder="John"
-                        />
+                        <label class="text-sm font-semibold text-foreground block mb-3">First Name</label>
+                        <input class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="John" />
                       </div>
                       <div>
-                        <label
-                          class="text-sm font-semibold text-foreground block mb-3"
-                          >Last Name</label
-                        >
-                        <input
-                          class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                          placeholder="Doe"
-                        />
+                        <label class="text-sm font-semibold text-foreground block mb-3">Last Name</label>
+                        <input class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Doe" />
                       </div>
                     </div>
 
                     <div>
-                      <label
-                        class="text-sm font-semibold text-foreground block mb-3"
-                        >Email</label
-                      >
-                      <input
-                        type="email"
-                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                        placeholder="john@example.com"
-                      />
+                      <label class="text-sm font-semibold text-foreground block mb-3">Email</label>
+                      <input type="email" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="john@example.com" />
                     </div>
 
                     <div>
-                      <label
-                        class="text-sm font-semibold text-foreground block mb-3"
-                        >Phone</label
-                      >
-                      <input
-                        type="tel"
-                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                        placeholder="(555) 123-4567"
-                      />
+                      <label class="text-sm font-semibold text-foreground block mb-3">Phone</label>
+                      <input type="tel" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="(555) 123-4567" />
                     </div>
 
                     <div>
-                      <label
-                        class="text-sm font-semibold text-foreground block mb-3"
-                        >Tell me about your needs</label
-                      >
-                      <textarea
-                        rows="4"
-                        class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-                        placeholder="Describe your care requirements, any specific conditions, or questions you may have..."
-                      ></textarea>
+                      <label class="text-sm font-semibold text-foreground block mb-3">Tell me about your needs</label>
+                      <textarea rows="4" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Describe your care requirements, any specific conditions, or questions you may have..."></textarea>
                     </div>
 
-                    <button
-                      type="submit"
-                      class="w-full py-6 text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 bg-primary text-primary-foreground font-semibold"
-                    >
+                    <button type="submit" class="w-full py-6 text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 bg-[#415d67] text-white font-semibold hover:bg-[#32464d]">
                       Schedule Free Consultation <span class="ml-2">➡️</span>
                     </button>
                   </form>
@@ -1191,7 +1079,6 @@
     <!-- AOS script -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-    
       // Load Footer
       fetch("footer.html")
         .then((res) => res.text())
@@ -1205,23 +1092,6 @@
         duration: 1000,
         easing: "ease-out",
       });
-
-      // simple dark mode toggle that toggles 'dark' on <html>
-      const darkToggle = document.getElementById("darkToggle");
-      darkToggle.addEventListener("click", () => {
-        const html = document.documentElement;
-        html.classList.toggle("dark");
-        // persist preference
-        if (html.classList.contains("dark"))
-          localStorage.setItem("theme", "dark");
-        else localStorage.removeItem("theme");
-        darkToggle.textContent = html.classList.contains("dark") ? "☀️" : "🌙";
-      });
-      // restore if stored
-      if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark");
-        darkToggle.textContent = "☀️";
-      }
 
       // Change navbar background on scroll
       const header = document.getElementById("mainHeader");
@@ -1243,7 +1113,6 @@
       });
 
       //chatbot
-      
       const chatbotBtn = document.getElementById("chatbotBtn");
       const chatbotWindow = document.getElementById("chatbotWindow");
       const sendBtn = document.getElementById("sendBtn");
@@ -1324,6 +1193,42 @@
         chatbotWindow.classList.add("hidden");
       });
 
+      // Animated counters for stats section with scroll trigger
+      const counters = document.querySelectorAll('.counter');
+
+      const runCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const suffix = counter.dataset.suffix || "";
+
+        let current = 0;
+        const increment = Math.ceil(target / 200);
+
+        const updateCount = () => {
+          if (current < target) {
+            current += increment;
+            if (current > target) current = target;
+            counter.innerText = current + suffix;
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target + suffix;
+          }
+        };
+
+        updateCount();
+      };
+
+      // Use IntersectionObserver to trigger animation when visible
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            runCounter(entry.target);
+            obs.unobserve(entry.target); // run only once
+          }
+        });
+      }, { threshold: 0.5 });
+
+      // Observe each counter
+      counters.forEach(counter => observer.observe(counter));
     </script>
   </body>
 </html>
