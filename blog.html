@@ -240,20 +240,20 @@
     <section class="py-16 px-6 md:px-12 lg:px-24 bg-white">
       <div class="grid md:grid-cols-2 gap-10 items-center" data-aos="fade-up">
         <img
-          src="assets/blog-featured.jpg"
+          src="assets/blog1.jpg"
           alt="Featured"
-          class="w-full h-80 object-cover rounded-xl shadow-lg"
+          class="w-full h-90 object-cover rounded-xl shadow-lg"
         />
         <div>
           <h2 class="text-3xl font-bold mb-4">
-            How Compassionate Care Transforms Lives
+            𝗕𝗿𝗶𝗱𝗴𝗶𝗻𝗴 𝘁𝗵𝗲 𝗚𝗮𝗽 𝗕𝗲𝘁𝘄𝗲𝗲𝗻 𝗛𝗼𝗺𝗲 𝗩𝗶𝘀𝗶𝘁𝘀 𝗮𝗻𝗱 𝗮 𝗖𝗮𝗿𝗲 𝗛𝗼𝗺𝗲
           </h2>
           <p class="text-gray-600 mb-6">
-            Discover real stories of care, support, and love that highlight the
-            impact of personalized non-medical assistance in daily living.
+            Because aged care isn’t just about services. It’s about people,
+            connection, and humanity.
           </p>
           <a
-            href="blog-post.html"
+            href="#full-story"
             class="inline-block px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition"
             >Read Full Story</a
           >
@@ -349,6 +349,29 @@
       </div>
     </section>
 
+    <!-- Full Story Section -->
+    <section id="full-story" class="hidden py-16 px-6 md:px-12 lg:px-24 bg-gray-50">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl font-bold mb-4">Bridging the Gap Between Home Visits and a Care Home</h2>
+          <p class="text-gray-600 mb-4">
+            Full blog content goes here. You can expand on the introduction, add details, stories, and insights about aged care, connection, and humanity. This section provides the full article experience without leaving the page.
+          </p>
+          <p class="text-gray-600">
+            Add more paragraphs, bullet points, or other elements as needed. This section becomes visible when the "Read Full Story" link is clicked.
+          </p>
+        </div>
+        <div>
+          <img src="assets/blog1.jpg" alt="Full Story" class="w-full h-auto object-cover rounded-xl shadow-lg" />
+        </div>
+      </div>
+      <div class="mt-6">
+        <button id="closeFullStory" class="px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
+          Close Story
+        </button>
+      </div>
+    </section>
+
     <!-- Newsletter CTA -->
     <section
       class="bg-gradient-to-r from-green-600 to-teal-600 py-16 text-center text-white"
@@ -425,6 +448,34 @@
       const mobileMenu = document.getElementById("mobileMenu");
       menuToggle.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Show full story on click
+        document.querySelectorAll('a[href="#full-story"]').forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const fullStory = document.getElementById("full-story");
+            if (fullStory) {
+              fullStory.classList.remove("hidden");
+              setTimeout(() => {
+                fullStory.scrollIntoView({ behavior: "smooth", block: "start" });
+              }, 100);
+            }
+          });
+        });
+
+        // Close full story on click
+        const closeBtn = document.getElementById("closeFullStory");
+        if (closeBtn) {
+          closeBtn.addEventListener("click", () => {
+            const fullStory = document.getElementById("full-story");
+            if (fullStory) {
+              fullStory.classList.add("hidden");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          });
+        }
       });
     </script>
   </body>
