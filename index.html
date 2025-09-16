@@ -248,7 +248,7 @@
                   The Village Nurse
                 </h1>
                 <p class="text-muted-foreground text-sm font-medium">
-                  Licensed Healthcare Professional
+                  Premium Nurse-Led Home Care & Support
                 </p>
               </div>
             </div>
@@ -424,9 +424,10 @@
                 data-aos-duration="800"
                 class="text-6xl lg:text-7xl font-bold text-[#415d67] mb-8 leading-[0.9] tracking-tight"
               >
-                Premium Nurse-Led 
+                Trusted Nurse-Led 
+
                 <br />
-                <span class="text-[#415d67]">Home Care & Support</span>
+                <span class="text-[#415d67]">Care at Home</span>
               </h2>
 
               <!-- Subtext -->
@@ -436,9 +437,7 @@
                 data-aos-delay="200"
                 class="text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed font-light"
               >
-                Experience hospital-quality nursing care in the comfort of your
-                home. Personalised, professional, and compassionate healthcare
-                when you need it most.
+                Compassionate support, tailored to your needs, bringing peace of mind and comfort to you and your family.
               </p>
 
               <!-- CTA buttons -->
@@ -659,7 +658,7 @@
                 class="relative group rounded-2xl overflow-hidden shadow-lg block"
               >
                 <img
-                  src="assets/comp.png"
+                  src="assets/companionshipp.png"
                   alt="Companionship & Connection"
                   class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-sm"
                 />
@@ -681,7 +680,7 @@
                 class="relative group rounded-2xl overflow-hidden shadow-lg block"
               >
                 <img
-                  src="assets/sit.png"
+                  src="assets/wellnesss.png"
                   alt="Wellness & Reassurance"
                   class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-sm"
                 />
@@ -703,7 +702,7 @@
                 class="relative group rounded-2xl overflow-hidden shadow-lg block"
               >
                 <img
-                  src="assets/sitt.png"
+                  src="assets/reablementt.png"
                   alt="Reablement & Recovery"
                   class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-sm"
                 />
@@ -725,7 +724,7 @@
                 class="relative group rounded-2xl overflow-hidden shadow-lg block"
               >
                 <img
-                  src="assets/endo.png"
+                  src="assets/respitt.png"
                   alt="Specialist & Respite Support"
                   class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-sm"
                 />
@@ -747,7 +746,7 @@
                 class="relative group rounded-2xl overflow-hidden shadow-lg block"
               >
                 <img
-                  src="assets/wheel.png"
+                  src="assets/wheelchair.png"
                   alt="Escort Services"
                   class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-sm"
                 />
@@ -769,7 +768,7 @@
                 class="relative group rounded-2xl overflow-hidden shadow-lg block"
               >
                 <img
-                  src="assets/over.png"
+                  src="assets/overnightt.png"
                   alt="Overnight & 24/7 Support"
                   class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-sm"
                 />
@@ -981,42 +980,43 @@
                     </p>
                   </div>
 
-                  <form class="space-y-6">
+                  <form id="bookingForm" class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="8932a6f4-4cde-4250-849f-5dd25a30b8ab" />
                     <div class="grid grid-cols-2 gap-4">
                       <div>
                         <label class="text-sm font-semibold text-foreground block mb-3">First Name *</label>
-                        <input required class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Enter your first name" />
+                        <input required name="first_name" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Enter your first name" />
                       </div>
                       <div>
                         <label class="text-sm font-semibold text-foreground block mb-3">Last Name *</label>
-                        <input required class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Enter your last name" />
+                        <input required name="last_name" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Enter your last name" />
                       </div>
                     </div>
 
                     <div>
                       <label class="text-sm font-semibold text-foreground block mb-3">Email</label>
-                      <input type="email" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Enter your email address" />
+                      <input type="email" name="email" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Enter your email address" />
                     </div>
 
                     <div>
                       <label class="text-sm font-semibold text-foreground block mb-3">Phone *</label>
-                      <input required type="tel" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Enter your contact number" />
+                      <input required type="tel" name="phone" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Enter your contact number" />
                     </div>
 
                     <div class="grid grid-cols-2 gap-4">
                       <div>
                         <label class="text-sm font-semibold text-foreground block mb-3">Preferred Date *</label>
-                        <input required type="date" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
+                        <input required type="date" name="preferred_date" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
                       </div>
                       <div>
                         <label class="text-sm font-semibold text-foreground block mb-3">Preferred Time *</label>
-                        <input required type="time" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
+                        <input required type="time" name="preferred_time" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
                       </div>
                     </div>
 
                     <div>
                       <label class="text-sm font-semibold text-foreground block mb-3">Brief summary about your needs *</label>
-                      <textarea required rows="4" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Please provide a brief summary of your care requirements, specific conditions, or any questions."></textarea>
+                      <textarea required name="message" rows="4" class="w-full px-4 py-3 border border-border rounded-xl bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Please provide a brief summary of your care requirements, specific conditions, or any questions."></textarea>
                     </div>
 
                     <button type="submit" class="w-full py-6 text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 bg-[#415d67] text-white font-semibold hover:bg-[#32464d]">
@@ -1241,6 +1241,30 @@
 
       // Observe each counter
       counters.forEach(counter => observer.observe(counter));
+    </script>
+    <script>
+      // Booking form AJAX submit
+      const bookingForm = document.getElementById("bookingForm");
+      if (bookingForm) {
+        bookingForm.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const formData = new FormData(bookingForm);
+          try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: formData,
+            });
+            if (response.ok) {
+              alert("✅ Thank you! We’ll get back to you shortly.");
+              bookingForm.reset();
+            } else {
+              alert("❌ Something went wrong. Please try again later.");
+            }
+          } catch (err) {
+            alert("❌ Something went wrong. Please try again later.");
+          }
+        });
+      }
     </script>
   </body>
 </html>
