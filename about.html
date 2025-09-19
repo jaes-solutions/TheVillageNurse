@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog - The Village Nurse</title>
+    <title>About - The Village Nurse</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
@@ -251,7 +251,7 @@
         <div class="grid grid-cols-12 gap-8">
           <!-- LEFT: small blurb + giant headline -->
           <div class="col-span-12 lg:col-span-4 flex flex-col">
-            <p class="text-sm text-[#415d67] max-w-xs ml-4">
+            <p class="text-sm text-[#415d67] mt-10 max-w-xs ml-4">
               At The Village Nurse Ltd, we provide exclusive, premium, nurse-led
               care designed for families who want only the highest standards of
               support. Our service goes beyond routine visits offering
@@ -263,14 +263,13 @@
               <!-- Giant headline -->
               <h2 class="font-[700] leading-[0.85] tracking-tight">
                 <span
-                  class="block text-[18vw] text-right mt-64 ml-24 text-[#415d67] lg:text-[10rem]"
+                  class="block text-[18vw] text-center mt-20 text-[#415d67] lg:text-[10rem] lg:text-right lg:mt-[200px] lg:ml-24"
                   >ABOUT</span
                 >
                 <span class="mt-20 mt-6 flex items-end gap-6">
                   <!-- thin underline before CAST -->
-
                   <span
-                    class="block text-[#415d67] text-[18vw] ml-[26rem] lg:text-[10rem] mt-1"
+                    class="block text-[#415d67] text-[18vw] text-center lg:text-[10rem] mt-1 lg:ml-[26rem]"
                     >US</span
                   >
                 </span>
@@ -281,10 +280,10 @@
           <!-- RIGHT: triptych + bottom-right caption -->
           <div class="col-span-12 lg:col-span-8">
             <!-- Triptych: tops aligned, bottoms staggered -->
-            <div class="flex items-start gap-4">
+            <div class="flex flex-col md:flex-row items-start gap-4">
               <!-- first (short) -->
               <figure
-                class="w-1/3 h-[22rem] overflow-hidden rounded-md bg-black/30 ring-1 ring-white/10"
+                class="w-full md:w-1/3 h-[16rem] md:h-[22rem] overflow-hidden rounded-md bg-black/30 ring-1 ring-white/10"
               >
                 <img
                   src="assets/comp.png"
@@ -294,7 +293,7 @@
               </figure>
               <!-- second (tallest) -->
               <figure
-                class="w-1/3 h-[40rem] overflow-hidden rounded-md bg-black/30 ring-1 ring-white/10"
+                class="w-full md:w-1/3 h-[20rem] md:h-[40rem] overflow-hidden rounded-md bg-black/30 ring-1 ring-white/10"
               >
                 <img
                   src="assets/endo.png"
@@ -304,7 +303,7 @@
               </figure>
               <!-- third (medium) -->
               <figure
-                class="w-1/3 h-[32rem] overflow-hidden rounded-md bg-black/30 ring-1 ring-white/10"
+                class="w-full md:w-1/3 h-[16rem] md:h-[32rem] overflow-hidden rounded-md bg-black/30 ring-1 ring-white/10"
               >
                 <img
                   src="assets/wheel.png"
@@ -316,7 +315,7 @@
 
             <!-- bottom-right caption under images -->
             <p
-              class="-mt-24 md:text-sm text-[#415d67] max-w-[16rem] ml-auto text-left"
+              class="mt-6 text-sm text-[#415d67] max-w-full md:max-w-[16rem] md:ml-auto text-center md:text-left"
             >
               Our mission is to deliver exclusive, nurse-led care that blends
               professional expertise with genuine compassion. We are committed
@@ -351,7 +350,7 @@
     </div>
 
     <!-- Our Story Section -->
-    <section class="bg-background text-center py-20">
+    <section class="bg-background text-center py-20 px-6">
       <div class="max-w-5xl mx-auto text-center">
         <h2
           class="text-4xl lg:text-5xl font-bold mb-6 mx-auto text-center w-full"
@@ -448,12 +447,34 @@
 
         <!-- Right: Video -->
         <div
-          class="w-full h-[28rem] lg:h-[36rem] max-w-[28rem] mx-auto px-4 rounded-lg overflow-hidden shadow-lg"
+          class="w-full h-[20rem] sm:h-[24rem] lg:h-[36rem] max-w-full lg:max-w-[28rem] mx-auto px-4 rounded-lg overflow-hidden shadow-lg"
         >
-          <video autoplay controls class="w-full h-full object-contain">
+          <video controls class="w-full h-full object-contain">
             <source src="assets/vik.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+        </div>
+      </div>
+    </section>
+    <!-- Accreditations Section -->
+    <section class="bg-background py-20 px-6 text-center">
+      <div class="max-w-5xl mx-auto">
+        <h2
+          class="text-4xl lg:text-5xl font-bold text-[#415d67] mb-10 text-center"
+        >
+          Accreditations
+        </h2>
+        <div class="flex flex-col items-center justify-center space-y-6">
+          <div class="flex items-center space-x-4">
+            <img
+              src="assets/accred.jpg"
+              alt="National Association of Care & Support Workers Logo"
+              class="h-20 w-auto object-contain"
+            />
+            <span class="text-lg font-medium"
+              >National Association of Care &amp; Support Workers</span
+            >
+          </div>
         </div>
       </div>
     </section>
